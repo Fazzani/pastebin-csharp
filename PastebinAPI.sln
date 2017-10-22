@@ -1,11 +1,16 @@
 ﻿
 Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio 15
-VisualStudioVersion = 15.0.26730.16
+VisualStudioVersion = 15.0.27004.2005
 MinimumVisualStudioVersion = 10.0.40219.1
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Example", "Example\Example.csproj", "{101F0348-D6D6-40B6-B85F-368FEEB46E38}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "PastebinAPI", "PastebinAPI\PastebinAPI.csproj", "{198F990F-5DBB-45AE-A98A-8E4771CC0D0D}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "PastebinAPI", "PastebinAPI\PastebinAPI.csproj", "{198F990F-5DBB-45AE-A98A-8E4771CC0D0D}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Solution Items", "Solution Items", "{294D0648-3CE8-4F8A-AF64-3CD3CDED5358}"
+	ProjectSection(SolutionItems) = preProject
+		appveyor.yml = appveyor.yml
+	EndProjectSection
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
