@@ -1,6 +1,8 @@
 Pastebin API for C#
 ===================
 
+[![Build status](https://ci.appveyor.com/api/projects/status/icdkfyubxnd8uej3?svg=true)](https://ci.appveyor.com/project/Fazzani/pastebin-csharp)
+
 This is a simple library for accessing Pastebin from C#
 
 # Example
