@@ -104,6 +104,13 @@ namespace PastebinAPI
         public static Paste Create(string text, string title = null, Language language = null, Visibility visibility = Visibility.Public, Expiration expiration = null)
             => Create("", text, title, language, visibility, expiration);
 
+        /// <summary>
+        /// Creates a new paste anonymously and uploads it to pastebin
+        /// </summary>
+        /// <returns>Paste object containing the Url given from Pastebin</returns>
+        public static async Task<Paste> CreateAsync(string text, string title = null, Language language = null, Visibility visibility = Visibility.Public, Expiration expiration = null)
+            => await CreateAsync("", text, title, language, visibility, expiration);
+
         ///<summary>String of 8 characters that is appended at the end of the url</summary>
         public string Key { get; private set; }
         ///<summary>Date at witch the paste was created</summary>

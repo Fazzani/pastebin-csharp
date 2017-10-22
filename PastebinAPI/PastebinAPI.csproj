@@ -14,12 +14,12 @@
     <Copyright>Copyright 2017</Copyright>
     <PackageTags>api wrapper pastebin netstandard c#</PackageTags>
     <PackageId>Pastebin.API.CSharp</PackageId>
-    <Version>1.0.3</Version>
-    <PackageReleaseNotes>Add User Create Async support</PackageReleaseNotes>
+    <Version>1.0.4</Version>
+    <PackageReleaseNotes>Add Paste Create Async support</PackageReleaseNotes>
     <RepositoryType>GitHub</RepositoryType>
     <PackageIconUrl>https://pastebin.com/i/pastebin_logo_side_outline.png</PackageIconUrl>
-    <AssemblyVersion>1.0.3.0</AssemblyVersion>
-    <FileVersion>1.0.3.0</FileVersion>
+    <AssemblyVersion>1.0.4.0</AssemblyVersion>
+    <FileVersion>1.0.4.0</FileVersion>
   </PropertyGroup>
 
 </Project>
