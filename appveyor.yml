@@ -24,8 +24,3 @@ build_script:
   - cmd: dotnet nuget push artifacts\**\*.* -k 440bc87f-c8b3-4410-b57b-192c649bcadd -s https://www.nuget.org/api/v2/package
 artifacts:
   - path: 'artifacts\*.nupkg'
-dotnet_csproj:
-  patch: true
-  file: '**\*.csproj'
-  version: $(appveyor_build_version)
-  package_version: $(appveyor_build_version)
