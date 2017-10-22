@@ -14,6 +14,7 @@ namespace PastebinAPI
         public const string URL_API = URL + @"api/api_post.php";
         public const string URL_LOGIN = URL + @"api/api_login.php";
         public const string URL_RAW = URL + @"raw.php?i=";
+        public const string RAW_PATH = @"raw/";
 
         public static IEnumerable<Paste> PastesFromXML(string xml)
         {

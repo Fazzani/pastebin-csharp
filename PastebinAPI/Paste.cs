@@ -8,22 +8,13 @@ namespace PastebinAPI
 {
     public class Paste
     {
+        /// <summary>
+        /// Create Paste From Xml
+        /// </summary>
+        /// <param name="xpaste"></param>
+        /// <returns></returns>
         internal static Paste FromXML(XElement xpaste)
         {
-            /* Example paste xml
-            <paste>
-	            <paste_key>0b42rwhf</paste_key>
-	            <paste_date>1297953260</paste_date>
-	            <paste_title>javascript test</paste_title>
-	            <paste_size>15</paste_size>
-	            <paste_expire_date>1297956860</paste_expire_date>
-	            <paste_private>0</paste_private>
-	            <paste_format_long>JavaScript</paste_format_long>
-	            <paste_format_short>javascript</paste_format_short>
-	            <paste_url>https://pastebin.com/0b42rwhf</paste_url>
-	            <paste_hits>15</paste_hits>
-            </paste>
-             */
             var paste = new Paste();
             paste.Key = xpaste.Element("paste_key").Value;
             paste.CreateDate = Utills.GetDate((long)xpaste.Element("paste_date"));
@@ -81,9 +72,7 @@ namespace PastebinAPI
         /// </summary>
         /// <returns>Paste object containing the Url given from Pastebin</returns>
         public static Paste Create(string text, string title = null, Language language = null, Visibility visibility = Visibility.Public, Expiration expiration = null)
-        {
-            return Create("", text, title, language, visibility, expiration);
-        }
+            => Create("", text, title, language, visibility, expiration);
 
         ///<summary>String of 8 characters that is appended at the end of the url</summary>
         public string Key { get; private set; }
@@ -97,9 +86,23 @@ namespace PastebinAPI
         public Expiration Expiration { get; private set; }
         public Visibility Visibility { get; private set; }
         public Language Language { get; private set; }
+
+        /// <summary>
+        /// Paste Url
+        /// </summary>
         public string Url { get; private set; }
+
+        /// <summary>
+        /// Raw Url
+        /// </summary>
+        public string RawUrl => $"{Utills.URL}{Utills.RAW_PATH}{Key}";
+
         ///<summary>Number of views</summary>
         public int Hits { get; private set; }
+
+        /// <summary>
+        /// Paste Content
+        /// </summary>
         public string Text { get; private set; }
 
         private Paste() { }
@@ -114,9 +117,6 @@ namespace PastebinAPI
             return Text = Utills.PostRequest(Utills.URL_RAW + Key);
         }
 
-        public override string ToString()
-        {
-            return Text ?? GetRaw();
-        }
+        public override string ToString() => Text ?? GetRaw();
     }
 }

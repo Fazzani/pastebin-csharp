@@ -4,7 +4,7 @@
     <TargetFramework>netstandard2.0</TargetFramework>
     <PackageRequireLicenseAcceptance>false</PackageRequireLicenseAcceptance>
     <GeneratePackageOnBuild>true</GeneratePackageOnBuild>
-    <Authors>Borislav Kosharov</Authors>
+    <Authors>Borislav Kosharov, Fazzani Heni</Authors>
     <Company />
     <Description>Simple and easy to use API wrapper for Pastebin</Description>
     <NeutralLanguage />
@@ -12,7 +12,12 @@
     <PackageProjectUrl>https://github.com/nikibobi/pastebin-csharp</PackageProjectUrl>
     <RepositoryUrl>https://github.com/nikibobi/pastebin-csharp</RepositoryUrl>
     <Copyright>Copyright 2017</Copyright>
-    <PackageTags>api wrapper pastebin</PackageTags>
+    <PackageTags>api wrapper pastebin netstandard c#</PackageTags>
+    <PackageId>Pastebin.API.CSharp</PackageId>
+    <Version>1.0.1</Version>
+    <PackageReleaseNotes>Add URL Raw</PackageReleaseNotes>
+    <RepositoryType>GitHub</RepositoryType>
+    <PackageIconUrl>https://pastebin.com/i/pastebin_logo_side_outline.png</PackageIconUrl>
   </PropertyGroup>
 
 </Project>
