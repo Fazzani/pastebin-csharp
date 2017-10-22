@@ -15,10 +15,10 @@ before_build:
   - cmd: dotnet --version
   - cmd: cd PastebinAPI
   # Display minimal restore text
-  - cmd: dotnet restore ./hfa.PastebinAPI.csproj --verbosity m
+  - cmd: dotnet restore ./PastebinAPI.csproj --verbosity m
 build_script:
-  - cmd: dotnet build ./hfa.PastebinAPI.csproj
-  - cmd: dotnet pack ./hfa.PastebinAPI.csproj -c %CONFIGURATION% --no-build --version-suffix %LABEL% -o artifacts
+  - cmd: dotnet build ./PastebinAPI.csproj
+  - cmd: dotnet pack ./PastebinAPI.csproj -c %CONFIGURATION% --no-build --version-suffix %LABEL% -o artifacts
   - cmd: ls artifacts\
   - cmd: dotnet nuget push artifacts\**\*.* -k ux16b846ggi3wy8arhuyxaqx -s https://ci.appveyor.com/nuget/fazzani/api/v2/package
   - cmd: dotnet nuget push artifacts\**\*.* -k 440bc87f-c8b3-4410-b57b-192c649bcadd -s https://www.nuget.org/api/v2/package
