@@ -3,6 +3,7 @@ using System.Text;
 using System.Linq;
 using System.Xml.Linq;
 using System.Collections.Generic;
+using System.Threading.Tasks;
 
 namespace PastebinAPI
 {
@@ -51,6 +52,35 @@ namespace PastebinAPI
             if (result.Contains(Utills.ERROR))
                 throw new PastebinException(result);
 
+            return FillPaste(text, title, language, visibility, expiration, result);
+        }
+
+        internal static async Task<Paste> CreateAsync(string userKey, string text, string title = null, Language language = null, Visibility visibility = Visibility.Public, Expiration expiration = null)
+        {
+            title = title ?? "Untitled";
+            language = language ?? Language.Default;
+            expiration = expiration ?? Expiration.Default;
+
+            var result = await Utills.PostRequestAsync(Utills.URL_API,
+                                            //required parameters
+                                            "api_dev_key=" + Pastebin.DevKey,
+                                            "api_option=" + "paste",
+                                            "api_paste_code=" + Uri.EscapeDataString(text),
+                                            //optional parameters
+                                            "api_user_key=" + userKey,
+                                            "api_paste_name=" + Uri.EscapeDataString(title),
+                                            "api_paste_format=" + language,
+                                            "api_paste_private=" + (int)visibility,
+                                            "api_paste_expire_date=" + expiration);
+
+            if (result.Contains(Utills.ERROR))
+                throw new PastebinException(result);
+
+            return FillPaste(text, title, language, visibility, expiration, result);
+        }
+
+        private static Paste FillPaste(string text, string title, Language language, Visibility visibility, Expiration expiration, string result)
+        {
             var paste = new Paste();
             paste.Key = result.Replace(Utills.URL, string.Empty);
             paste.CreateDate = DateTime.Now;
@@ -115,6 +145,16 @@ namespace PastebinAPI
             if (Visibility == Visibility.Private)
                 throw new PastebinException("Private pastes can not be accessed");
             return Text = Utills.PostRequest(Utills.URL_RAW + Key);
+        }
+
+        /// <summary>
+        /// Gets the raw text for a given url
+        /// </summary>
+        public async Task<string> GetRawAsync()
+        {
+            if (Visibility == Visibility.Private)
+                throw new PastebinException("Private pastes can not be accessed");
+            return Text = await Utills.PostRequestAsync(Utills.URL_RAW + Key);
         }
 
         public override string ToString() => Text ?? GetRaw();
