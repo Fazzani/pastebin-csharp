@@ -108,7 +108,7 @@ namespace PastebinAPI
         /// <summary>
         /// Raw Url
         /// </summary>
-        public string RawUrl => $"{Utills.URL}{Utills.RAW_PATH}{Key}";
+        public string RawUrl => $"{Utills.URL}{URL_RAW}{Key}";
 
         /// <summary>
         /// Gets the raw text for a given url
