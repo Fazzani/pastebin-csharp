@@ -20,6 +20,9 @@
     <PackageIconUrl>https://pastebin.com/i/pastebin_logo_side_outline.png</PackageIconUrl>
     <AssemblyVersion>1.0.4.0</AssemblyVersion>
     <FileVersion>1.0.4.0</FileVersion>
+    <Copyright>Copyright 2018</Copyright>
+    <PackageTags>api wrapper pastebin</PackageTags>
+    <Version>1.1.0</Version>
   </PropertyGroup>
 
 </Project>
