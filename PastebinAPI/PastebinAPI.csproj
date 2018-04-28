@@ -5,7 +5,7 @@
     <PackageRequireLicenseAcceptance>false</PackageRequireLicenseAcceptance>
     <GeneratePackageOnBuild>true</GeneratePackageOnBuild>
     <Authors>Borislav Kosharov, Fazzani Heni</Authors>
-    <Company />
+    <Company>Synker</Company>
     <Description>Simple and easy to use API wrapper for Pastebin</Description>
     <NeutralLanguage />
     <PackageLicenseUrl>https://github.com/nikibobi/pastebin-csharp/blob/master/LICENSE</PackageLicenseUrl>
@@ -21,8 +21,9 @@
     <AssemblyVersion>1.0.4.0</AssemblyVersion>
     <FileVersion>1.0.4.0</FileVersion>
     <Copyright>Copyright 2018</Copyright>
-    <PackageTags>api wrapper pastebin</PackageTags>
-    <Version>1.1.0</Version>
+    <PackageTags>Api c# wrapper pastebin</PackageTags>
+    <Version>1.0.4</Version>
+    <PackageVersion>1.0.4</PackageVersion>
   </PropertyGroup>
 
 </Project>
