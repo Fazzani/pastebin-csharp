@@ -108,7 +108,7 @@ namespace PastebinAPI
         /// <summary>
         /// Raw Url
         /// </summary>
-        public string RawUrl => $"{Utills.URL}{URL_RAW}{Key}";
+        public string RawUrl => Url.Replace(Utills.URL, $"{Utills.URL}raw/");
 
         /// <summary>
         /// Gets the raw text for a given url
